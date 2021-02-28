@@ -1,0 +1,217 @@
+.imcs_mat_btn {
+  background: transparent;
+  border: 1px solid #0298f6;
+  border-radius: 50%;
+  line-height: 0px;
+  padding: 0px;
+  margin-right: 10px;
+  cursor: pointer;
+  outline: none;
+  color: #0298f6;
+}
+calendar-event-image {
+  border-radius: 2px;
+  border: 2px solid black;
+}
+.array-class {
+  float: left;
+  padding-right: 10px;
+}
+.imcs_mat_btn_noborder {
+  border: none;
+  color: #0298f6;
+}
+.padding-class {
+  padding-top: 50px;
+}
+
+.imcs_mat_btn_noteDel {
+  cursor: pointer;
+  color: #2a8686;
+}
+
+.calendar-event {
+  font-size: 12px;
+  color: #697685;
+  font-family: SFLight;
+}
+:host::ng-deep.mat-select-value {
+  font-size: 13px;
+  color: black;
+  font-family: SFLight;
+}
+
+:host::ng-deep svg {
+  height: 12px;
+  width: 12px;
+  /* display:none; */
+  /* color: #0298f6!important;  */
+}
+.ism_addcalendar_time .mat-form-field {
+  width: 30%;
+}
+.field-width {
+  width: 65%;
+}
+.calendar-width {
+  width: 90%;
+}
+.field-width {
+  width: 46%;
+}
+.email-width {
+  width: 46%;
+  float: left;
+}
+.status-width {
+  width: 41%;
+  margin-left: 12px;
+}
+.time-select {
+  margin: 12px;
+}
+:host::ng-deep.mat-input-element {
+  font-weight: bold !important;
+  color: black !important;
+}
+.shared-calendar {
+  font-family: SFMedium;
+  font-size: 12px;
+  font-weight: Light;
+  color: #0298f6;
+  float: right;
+  margin-top: -4px;
+  margin-right: 10%;
+}
+div.clear {
+  clear: both !important;
+  text-align: center;
+}
+.event-add {
+  font-family: SFMedium;
+  font-size: 13px;
+  background-color: #0298f6;
+  color: #ffffff;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 35px;
+  border-radius: 3px;
+}
+.event-cancel {
+  font-size: 13px;
+  color: #0298f6;
+  font-family: SFMedium;
+  font-weight: Medium;
+  outline: none !important;
+}
+:host::ng-deep .search-input {
+  width: 290px !important;
+  margin-left: 14px !important;
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
+}
+.select-class {
+  font-size: 13px;
+  color: #697685;
+  font-family: SFLight;
+  margin-bottom: -9px !important;
+}
+:host::ng-deep.mat-accent .mat-pseudo-checkbox-checked,
+.mat-accent .mat-pseudo-checkbox-indeterminate,
+.mat-pseudo-checkbox-checked,
+.mat-pseudo-checkbox-indeterminate {
+  background: #0298f6;
+}
+.selection-button {
+  font-family: SFMedium;
+  font-size: 14px !important;
+  font-weight: Light;
+  color: #0298f6;
+  border: none;
+  outline: none;
+  float: right;
+  background-color: white;
+}
+:host::ng-deep.mat-list-base .mat-list-item .mat-list-text,
+.mat-list-base .mat-list-option .mat-list-text {
+  flex-direction: row;
+}
+:host::ng-deep.mat-icon {
+  margin-top: 15px;
+  transform: scale(0.7);
+}
+:host::ng-deep.mat-selection-list.mat-list-base {
+  height: 250px !important;
+  padding-top: 0px !important;
+}
+.scrollbar-calendar-event {
+  margin-left: 0px;
+  float: left;
+  height: 252px;
+  width: 299px;
+  overflow-y: scroll;
+}
+.force-overflow {
+  min-height: 450px;
+}
+:host::ng-deep.mat-input-element {
+  font-size: 12px !important;
+  color: #000000;
+  font-family: SFLight;
+  margin-bottom: 9px !important;
+}
+.invitee-class {
+  font-size: 12px;
+  color: #697685;
+  font-family: SFMedium;
+}
+.team-class {
+  font-size: 12px;
+  color: #697685;
+  font-family: SFMedium;
+  margin-left: 12px;
+}
+:host::ng-deep.button-class {
+  width: 6px !important;
+  height: 6px !important;
+  border: 2px solid #0298f6 !important;
+  border-radius: 2px !important;
+}
+.layout-row {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+:host::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0.1375em 0 !important;
+}
+:host::ng-deep.mat-form-field-hide-placeholder .mat-select-placeholder {
+  margin-bottom: 5px !important;
+}
+:host::ng-deep[_nghost-hma-c10] svg{
+  color:#697685!important;
+} 
+ :host::ng-deep.ngx-material-timepicker-toggle[_ngcontent-aqp-c14]{
+  color: #0298f6!important;
+  background-color:none!important;
+   } 
+/* svg{
+  display:none;
+} */
+
+ button.ngx-material-timepicker-toggle::after{
+  content:'\e819';
+  position:absolute;
+  font-family:'is_icon_font';
+ }
+
+ /* .ngx-material-timepicker-toggle{
+  position: absolute;
+  top: -84px;
+  width: 374px;
+  height: 336px;
+  background-image: url('../assets/image/time_picker.svg');
+  background-repeat: repeat;
+  background-size: 31px 31px;
+ } */

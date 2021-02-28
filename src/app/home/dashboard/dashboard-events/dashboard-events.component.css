@@ -1,0 +1,23 @@
+
+  .isc-events mat-card-header {
+    position: relative;
+  }
+  
+  .isc-events .isc_events_close {
+    position: absolute;
+    right: 0px;
+    background-color: transparent;
+    border-color: transparent;
+    outline-style: none !important;
+    outline: none !important;
+  }
+  .isc-evts{
+    max-width: 700px;
+    width: 100%;
+    min-height: 80px;
+    border: 2px solid #F5F5F5;
+    margin-bottom: 1% !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }

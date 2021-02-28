@@ -1,0 +1,48 @@
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    overflow: hidden;
+}
+.add-new-div {
+    border-bottom: 1px solid #F3F4F4;
+    color: #697685;
+    font-family: SFMedium;
+    font-size:14px;
+    height: 50px;
+    background: white;
+    padding-left:20px;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+.matDialogContent{
+    height:280px;
+    padding-left:44px;
+    font-family: SFLight;
+}
+.matFormFields{
+    width:50%;
+}
+.matFormFieldDesc{
+    width:95%;
+}
+.label {
+    font-family: SFLight;
+    color: #828D9A;
+    font-size: 12px;
+}
+.buttondiv {
+    margin-top: 20px;
+    margin-left: 150px;
+}
+.createbutton {
+    background-color: #0298f6;
+    color: #ffffff;
+    font-size: 12px;
+}
+.cancelbutton {
+    font-size: 12px;
+}
+.cancelbutton:hover {
+    color: #0298f6;
+}
+

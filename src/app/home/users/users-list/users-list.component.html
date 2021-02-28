@@ -1,0 +1,144 @@
+<div class="container-fluid">
+  <mat-toolbar class="transparentHeader">
+    <mat-toolbar-row>
+      <span class="headerClass">Users List ({{resultsLength}})</span>
+      <span class="example-spacer"></span>
+      <div class="example-button-row">
+        <button mat-raised-button class="imcsfullBtn" color="primary" (click)="importUser()">
+          <mat-icon>save_alt</mat-icon>
+          Import User
+        </button>
+        <button mat-raised-button class="imcsfullBtn" color="primary" (click)="addUser()">
+          <mat-icon>add</mat-icon>
+          Add User
+        </button>
+      </div>  
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-card class="example-card">
+    <mat-card-content>
+      <span class="hline"></span>
+      <mat-toolbar class="tollbarsmall">
+        <div class="example-button-row">
+          <button mat-stroked-button [disabled]="(dataSource.data.length > 0) ? (!selection.hasValue() && !isAllSelected()) ?  true : false : true" class="strockBtn"
+             (click)="sendInvitation()" color="primary">Send Invitation</button>
+          <button mat-stroked-button [disabled]="(dataSource.data.length > 0) ? (!selection.hasValue() && !isAllSelected()) ?  true : false : true" class="strockBtn"
+            (click)="deleteUser()" color="primary">Delete</button>
+        </div>
+      </mat-toolbar>
+      <span class="hline"></span>
+      <mat-toolbar class="tollbarsmallwhite">
+        <mat-radio-group  (change)="radioChange($event)" >
+          <mat-radio-button checked="true" value="All">All</mat-radio-button>
+          <mat-radio-button value="Corporate">Corporate</mat-radio-button>
+          <mat-radio-button value="External">External</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-form-field style="padding-left: 2rem;;">
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        <span class="example-spacer"></span>
+        <mat-paginator class="customPagenator" [length]="resultsLength" [pageSize]="10" (page)="pageEvent($event)"
+          [pageSizeOptions]="[5,10,20,50,100]" >
+        </mat-paginator>
+      </mat-toolbar>
+      <span class="hline"></span>
+
+      <div class="example-container mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="sortData($event)"
+          [matSortDisableClear]="true" [matSortDirection]="sortValues.order_by">
+
+          <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Checkbox Column -->
+          <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+              <mat-checkbox (change)="$event ? masterToggle() : null"
+                [checked]="selection.hasValue() && isAllSelected()"
+                [indeterminate]="selection.hasValue() && !isAllSelected()">
+              </mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let row">
+              <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                [checked]="selection.isSelected(row)">
+              </mat-checkbox>
+            </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="first_name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+          </ng-container>
+
+          <!-- Email Column -->
+          <ng-container matColumnDef="user_name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.user_name}} </td>
+          </ng-container>
+
+          <!-- User Type Column -->
+          <ng-container matColumnDef="user_type">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header class="table-heading"> User Type </th>
+            <td mat-cell *matCellDef="let element" class="table-body"> {{element.user_type}} </td>
+          </ng-container>
+
+          <!-- Status Column -->
+          <ng-container matColumnDef="status">
+            <th mat-header-cell class="table-heading" *matHeaderCellDef mat-sort-header> Status </th>
+            <td mat-cell class="table-body" *matCellDef="let element">
+              <ng-container>
+                <div [ngStyle]="{'color':element.statusColor}"> {{element.status}} </div>
+              </ng-container>
+            </td>
+          </ng-container>
+
+          <!-- Invited Column -->
+          <ng-container matColumnDef="invited_date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Invited </th>
+            <td mat-cell *matCellDef="let element"> {{element.invited_date}} </td>
+          </ng-container>
+
+          <!-- Joined Column -->
+          <ng-container matColumnDef="joined_date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Joined </th>
+            <td mat-cell *matCellDef="let element"> {{element.joined_date}} </td>
+          </ng-container>
+
+          <!-- Star Column -->
+          <ng-container matColumnDef="actions" stickyEnd>
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+
+              <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item [routerLink]="'profile'" (click) = editUser(element)>
+                  <mat-icon>edit</mat-icon>
+                  <span>Edit</span>
+                </button>
+                <button mat-menu-item (click) = deleteUser(element)> 
+                  <mat-icon>delete</mat-icon>
+                  <span>Delete</span>
+                </button>
+                <button mat-menu-item (click) = sendInvitation(element)>
+                  <mat-icon>send</mat-icon>
+                  <span>Send Invitation</span>
+                </button>
+              </mat-menu>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns;"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="$event.stopPropagation()">
+          </tr>
+        </table>
+      </div>
+
+    </mat-card-content>
+
+  </mat-card>
+
+</div>

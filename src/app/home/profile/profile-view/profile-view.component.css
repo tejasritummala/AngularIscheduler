@@ -1,0 +1,57 @@
+.main {
+    font-family: SFLight;
+    font-size: 17px;
+    color: #697685;
+}
+
+.isc_calendar_header {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+#flex-container {
+    display: grid;
+    /* grid-template-columns: 1fr 300px;
+    grid-column-gap: 13px; */
+}
+
+#flex-container>.flex-item {
+    flex: auto;
+}
+
+
+
+img {
+    height: 6rem;
+    width: auto;
+    /* border: 5px #000; */
+    border-radius: 50%;
+}
+
+.profile-button {
+    font-size: 13px;
+    font-family: SFLight;
+    color: #0298f6;
+
+    outline: none;
+}
+
+.buttondiv {
+    margin-top: 20px;
+    margin-left: 150px;
+}
+
+.createbutton {
+    background-color: #0298f6;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.customcard {
+    margin: 2rem;
+}
+
+.chkbox {
+    margin: 2rem;
+}

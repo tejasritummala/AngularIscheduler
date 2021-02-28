@@ -1,0 +1,225 @@
+<div class="container-fluid">
+<div class="ism_landing">
+    <section class="ism_landing_banner">
+        <div class="ism_bg"></div>
+        <div [className]="visible ? 'ism_landing_header fixed-header' : 'ism_landing_header'" >
+            <div class="ism_max_width">
+                <nav [className]="visible ? 'navbar navbar-expand-lg navbar-light visible-title' : 'navbar navbar-expand-lg navbar-light'" >
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img class="ism_logo" src="../../assets/image/ism_weblogo.svg" alt="Logo">
+                        <img class="ism_logoscroll" src="../../assets/image/ism_logo_scroll.svg" alt="Logo">
+                    </a>
+                    <div class="ism_getstarted_btn res">
+                        <button type="button" class="">
+                            <a (click)="sendMessage($event)">Get Started</a>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link active" (click)="sendMessage($event)">Product
+                                <span class="sr-only">(current)</span>
+                            </a>
+                            <a class="nav-item nav-link" href="#">Integrations</a>
+                            <a class="nav-item nav-link" (click)="sendMessage($event)">Pricing</a>
+                            <a class="nav-item nav-link" href="#">Support</a>
+                            <a class="nav-item nav-link" href="#">FAQ</a>
+                            <a class="nav-item nav-link" (click)="sendMessage($event)" >Log In</a>
+                        </div>
+                    </div>
+                    <div class="ism_getstarted_btn desk">
+                        <button type="button" (click)="sendMessage($event)" class="">
+                            <a>Get Started</a>
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="ism_max_width">
+            <div class="ism_landing_banner_content">
+                <div>
+                    <h1>Make Meetings
+                        <label>Quick and easy.</label>
+                    </h1>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        <br> Lorem Ipsum has been the industry's standard dummy text ever </p>
+                    <div class="ism_getstarted_field">
+                        <input type="text" name="" id="" placeholder="Your Email Address">
+                        <button type="button">Start free Trial</button>
+                    </div>
+                </div>
+
+                <div class="ism_banner_bg">
+                    <img src="../../assets/image/ism_banner_img.svg" alt="banner">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>   
+<section class="ism_landing_exprnce">
+    <div class="ism_max_width">
+        <div class="ism_experience">
+            <div>
+                <h2>The best scheduling
+                    <br> experience</h2>
+                <label>Clean and professional, Isheduling interface makes it easy for your clients or collegues to find
+                    a time to meet . And with ischeduling robust preferences, you can effortlessly customize meeting
+                    times, locations, and more.</label>
+                <button>Take a video tour</button>
+            </div>
+            <div class="ism_experience_img">
+                <span></span>
+                <img src="../../assets/image/ism_experience_img.svg" alt="experience">
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ism_landing_works">
+    <div class="ism_max_width">
+        <div class="ism_works">
+            <h2>How it works</h2>
+            <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</label>
+            <div class="ism_works_cl01">
+                <div class="ism_works_cl011">
+                    <i class="is_create_team"></i>
+                    <h4>Create Your
+                        <br> Team</h4>
+                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </label>
+                </div>
+                <div class="ism_works_cl011">
+                    <i class="is_team_member"></i>
+                    <h4>Add Your Team
+                        <br> Members</h4>
+                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </label>
+                </div>
+                <div class="ism_works_cl011">
+                    <i class="is_set_availability"></i>
+                    <h4>Set up Your Availability
+                        <br> and Preferences</h4>
+                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </label>
+                </div>
+                <div class="ism_works_cl011">
+                    <i class="is_both_parties"></i>
+                    <h4>Both Parties receive a calendar
+                        <br> invite with the details about meeting.</h4>
+                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </label>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ism_features">
+    <div class="ism_max_width">
+        <div class="ism_features_cl01">
+            <h2>Features</h2>
+            <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </label>
+            <div class="ism_features_cl011">
+                <div class="ism_features_cl012">
+                    <i class="is_per_dashboard"></i>
+                    <h4>Personolised Dashboard</h4>
+                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</label>
+                </div>
+                <div class="ism_features_cl012">
+                    <i class="is_time_detection"></i>
+                    <h4>Auto Timezone Detection</h4>
+                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</label>
+                </div>
+                <div class="ism_features_cl012">
+                    <i class="is_calender"></i>
+                    <h4>Calendar Integration</h4>
+                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</label>
+                </div>
+                <div class="ism_features_cl012">
+                    <i class="is_schedule_gmail"></i>
+                    <h4>Schedule from Gmail</h4>
+                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</label>
+                </div>
+                <div class="ism_features_cl012">
+                    <i class="is_sync_account"></i>
+                    <h4>Sync calendars from multiple accounts</h4>
+                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</label>
+                </div>
+                <div class="ism_features_cl012">
+                    <i class="is_group_scheduling"></i>
+                    <h4>Group Scheduling</h4>
+                    <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</label>
+                </div>
+            </div>
+            <a class="ism_viewall" href="">VIEW ALL ></a>
+            <h2>Connected to the tools you depend on</h2>
+            <label>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </label>
+            <div class="ism_features_cl022">
+                <img src="../../assets/image/ism_gmail.png" alt="Gmail">
+                <img src="../../assets/image/ism_outlook.png" alt="Outlook">
+                <img src="../../assets/image/ism_slack.png" alt="Slack">
+                <img src="../../assets/image/ism_zapier.png" alt="Zapier">
+                <img src="../../assets/image/ism_zoho.png" alt="Zoho">
+                <img src="../../assets/image/ism_zimbra.png" alt="Zimbra">
+            </div>
+
+            <a class="ism_viewall" href="">VIEW ALL ></a>
+        </div>
+        <div class="ism_getstarted">
+            <h4>Get started for free today</h4>
+            <div class="ism_getstarted_field">
+                <input type="text" name="" id="" placeholder="Your Email Address">
+                <button type="button">Sign Up</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="ism_footer">
+    <div class="ism_footer_cl01">
+        <div class="ism_max_width">
+            <div class="ism_footer_cl011">
+                <img src="../../assets/image/ism_logo.svg" alt="Logo">
+                <div class="ism_footer_cl012">
+                    <h3>PRODUCTS</h3>
+                    <a href="">Features</a>
+                    <a href="">How to work?</a>
+                    <a href="">FAQs</a>
+                </div>
+                <div class="ism_footer_cl012">
+                    <h3>MENU</h3>
+                    <a href="">Home</a>
+                    <a href="">Integrations</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="">Support</a>
+                </div>
+                <div class="ism_footer_cl012">
+                    <h3>SOCIAL</h3>
+                    <a href="">Facebook</a>
+                    <a href="">Dribble</a>
+                    <a href="">Twitter</a>
+                    <a href="">Instagram</a>
+                </div>
+                <div class="ism_footer_cl012">
+                    <h3>COMPANY</h3>
+                    <a href="">Careers</a>
+                    <a href="">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ism_footer_cl02">
+        <div class="ism_max_width">
+            <div class="ism_footer_cl022">
+                <div>
+                    <label>Terms & Conditions Privacy Policy</label>
+                </div>
+                <div>
+                    <label>Copyright © --------------2019</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>

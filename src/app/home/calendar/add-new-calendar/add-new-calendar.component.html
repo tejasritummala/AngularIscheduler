@@ -1,0 +1,37 @@
+<mat-toolbar class="add-new-div">
+    Create New Calendar
+    <span class="example-spacer"></span>
+    <button mat-icon-button [mat-dialog-close]="true">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-dialog-content class="matDialogContent">
+    <form [formGroup]="calendarForm" #newCalendarForm="ngForm">
+        <mat-form-field class="matFormFields">
+            <mat-label class="label">Calendar Name:</mat-label>
+            <input matInput placeholder="Calendar Name" formControlName="calName" required>
+            <mat-error>
+                Calendar Name is required.
+            </mat-error>
+        </mat-form-field><br>
+        <mat-form-field class="matFormFields">
+            <mat-label class="label">Time Zone</mat-label>
+            <mat-select required formControlName="timeZone" id='timezone-selector' (change)="onChange($event)">
+                <mat-option *ngFor="let arr of timeZoneArr" [value]="arr">{{arr}}</mat-option>
+            </mat-select>
+            <mat-error>
+                Time Zone is required.
+            </mat-error>
+        </mat-form-field><br>
+        <mat-form-field class="matFormFieldDesc">
+            <mat-label class="label">Description:</mat-label>
+            <input matInput placeholder="Description" formControlName="description">
+        </mat-form-field>
+        <div class="buttondiv">
+            <button class="createbutton" mat-button (click)="onCreateCalendar()">
+                Create Calendar
+            </button>
+            <button class="cancelbutton" mat-button [mat-dialog-close]="true">Cancel</button>
+        </div>
+    </form>
+</mat-dialog-content>

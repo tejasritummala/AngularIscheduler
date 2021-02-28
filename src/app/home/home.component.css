@@ -1,0 +1,61 @@
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar {
+  background: #ffffff;
+  min-height: 70px;
+  /* display: grid;
+  grid-template-columns: 70px 1fr; */
+  /* align-items: center; */
+  border-bottom: 1px solid #F5F5F5;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+mat-toolbar-row h1 img {
+  width: 29px;
+  height: 40px;
+  margin: auto;
+  text-align: center;
+}
+
+.mat-list-base {
+  padding: 0px;
+}
+
+.mat-nav-list .mat-list-item {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  color: #697685;
+}
+
+.mat-nav-list .mat-list-item.active {
+  color: #0298f6;
+}
+
+.mat-nav-list .mat-list-item ::ng-deep .mat-list-item-content {
+  width: 100% !important;
+  height: 100%;
+}
+
+.ism_meanu_lead {
+  font-size: 13px;
+}
+
+.mat-drawer-side {
+  border-right: 1px solid #F5F5F5;
+  position: relative;
+  width: 100%;
+}
+
+.mat-drawer-content {
+  margin-left: 0px !important;
+}

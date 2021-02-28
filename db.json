@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "firstName": "mahesh",
+      "lastName": "fgh",
+      "email": "fdgb@gmail.com",
+      "phone": "9876543210",
+      "password": "qwerty123",
+      "confirmPassword": "qwerty123",
+      "companyName": "comp1",
+      "country": "option",
+      "webUrl": "http;//jhds.com",
+      "id": 1
+    },
+    {
+      "firstName": "mahesh",
+      "lastName": "fgh",
+      "email": "qwerty@gmail.com",
+      "phone": "9876543210",
+      "password": "qwerty123",
+      "confirmPassword": "qwerty123",
+      "companyName": "comp1",
+      "country": "option",
+      "webUrl": "http;//jhds.com",
+      "id": 2
+    },
+    {
+      "firstName": "mahesh",
+      "lastName": "asdf",
+      "email": "dsf@gmail.com",
+      "phone": "9876543210",
+      "password": "qwerty123",
+      "confirmPassword": "qwerty123",
+      "companyName": "comp1",
+      "country": "option",
+      "webUrl": "http;//jhds.com",
+      "id": 3
+    },
+    {
+      "firstName": "fname4",
+      "lastName": "lname4",
+      "email": "fname4@gmail.com",
+      "phone": "9876543210",
+      "password": "qwerty123",
+      "confirmPassword": "qwerty123",
+      "companyName": "comp1",
+      "country": "option",
+      "webUrl": "http;//jhds.com",
+      "id": 4
+    },
+    {
+      "params": {
+        "email": "qwerty@gmail.com",
+        "password": "qwerty123"
+      },
+      "observe": "response",
+      "id": 5
+    }
+  ]
+}

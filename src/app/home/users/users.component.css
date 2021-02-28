@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+  }
+
+  .mat-column-select {
+    overflow: initial;
+  }
+
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+
+  .mat-form-field {
+    font-size: 14px;
+  
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+  .mat-toolbar-row, .mat-toolbar-single-row {
+    height: 50px;
+}

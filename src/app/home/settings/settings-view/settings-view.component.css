@@ -1,0 +1,89 @@
+.daycolor {
+  background-color: #098ddf;
+  color: #ffffff;
+  /* width: 35px;
+  height: 35px; */
+  margin: 5px;
+  font-size: small;
+  font-weight: 400;
+}
+
+.nodaycolor {
+  background-color: #ffffff;
+  color: #808080;
+}
+
+.toTime {
+  width: 90px;
+  margin-left: 10px;
+}
+
+.fromTime {
+  width: 90px;
+  margin-left: 10px;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: 90px repeat(2, max-content) 40px;
+}
+
+.days div {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+}
+
+.addicon {
+  padding: 4px;
+}
+
+.addicon mat-icon {
+  color: whitesmoke;
+  background-color: #098ddf;
+  border-radius: 50%;
+}
+
+.toogle {
+  font-size: 4px;
+}
+
+.closeicon {
+  margin-left: 2px;  
+  color: blue;
+  background-color: whitesmoke
+}
+
+:host::ng-deep svg {
+  height: 12px;
+  width: 12px;
+}
+
+.closeicon mat-icon {
+  font-size: 16px;
+}
+
+
+.addicon mat-icon {
+  font-size: 16px;
+}
+
+
+.label {
+  padding-right: 5rem;
+}
+
+.toolbar {
+  margin-top: 2rem;
+}
+
+.buttondiv {
+  margin-top: 20px;
+  margin-left: 150px;
+}
+
+.settingsheader {
+  font-size: 1.6rem;
+  color: #697685;
+  font-family: SFLight;
+  padding-bottom: 10px;
+}

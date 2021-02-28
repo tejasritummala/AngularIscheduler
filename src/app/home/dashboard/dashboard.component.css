@@ -1,0 +1,35 @@
+
+::ng-deep .mat-calendar-header {
+  padding: 0px !important;
+}
+::ng-deep .mat-calendar-controls{
+  margin: 0px !important;
+  border-bottom: 1px solid #ebecec;
+  margin-bottom: 12px !important;
+  min-height: 50px;
+  align-items: center;
+}
+
+::ng-deep .mat-calendar-period-button{
+  color: #697685;
+  font-family: 'SFMedium';
+}
+
+::ng-deep .mat-calendar-table-header-divider, ::ng-deep .mat-calendar-body-label{
+  display: none;
+}
+
+.ism_dashboard_activecalendar{
+  padding-top: 20px;
+  border-top: 1px solid #ebecec;
+  margin: 20px;
+  color: #697685;
+}
+
+.ism_dashboard_activecalendar ::ng-deep .mat-list-base, 
+.ism_dashboard_activecalendar ::ng-deep .mat-list-base .mat-list-item .mat-list-item-content{
+  padding: 0px;
+  color: #697685;
+  font-size: 14px;
+  font-family: 'SFLight';
+}

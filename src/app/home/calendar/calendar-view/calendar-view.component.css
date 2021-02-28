@@ -1,0 +1,295 @@
+#flex-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-column-gap: 13px;
+}
+
+#flex-container>.flex-item {
+    flex: auto;
+}
+
+.md-grid-list {
+    height: 100%;
+}
+
+.isc_calendar_header {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.main {
+    font-family: SFLight;
+    font-size: 17px;
+    color: #697685;
+}
+
+.add {
+    background-color: #0298f6;
+    color: white;
+    margin-bottom: 20px;
+}
+
+
+.calendar {
+    font-size: 14px;
+    background-color: #f9f9f9;
+    font-family: SFLight;
+    padding-top: 0px!important;
+}
+
+.customcard {
+    height: 50px;
+    border-color: #697685;
+    border-radius: 0%;
+    padding-right: 0px;
+    padding-top:0px !important;
+}
+
+.customlabel {
+    font-family: SFbold;
+    color: #697685;
+    size: 14px;
+    padding-top: 15px;
+}
+
+
+.settingsicon {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: black;
+    font-size: 14px;
+    float: right;
+    padding-top: 15px;
+}
+
+.customcalendar {
+    height: 599px;
+    font-family: SFMedium;
+    color: #697685;
+    border-radius: 0%;
+}
+
+.search {
+    padding: 0px;
+    width: 265px;
+}
+
+.searchicon {
+    color: #697685;
+    font-size: 14px;
+}
+
+
+.overflow {
+    overflow-y: scroll;
+    height: 95px;
+    padding-top: 4px;
+}
+
+.user {
+    font-family: SFLight;
+    font-size: 13px;
+    margin-right: 40px;
+    color: #929497;
+    padding-bottom: 35px;
+    height: 29px;
+}
+
+
+.example-space {
+    flex: 1 1 auto;
+}
+
+.vertbutton {
+    color: #697685;
+    background-color: transparent;
+    border: none;
+}
+
+.menubutton {
+    line-height: 30px;
+    height: 30px;
+    font-size: 12px;
+    font-family: SFLight;  
+}
+
+.buttonadd {
+    font-size: 13px;
+    font-weight: light;
+    font-family: SFMedium;
+    color: #0298f6;
+    margin-top: 20px;
+}
+
+.addicon {
+    width: 15px;
+    height: 15px;
+    color: #0298f6;
+}
+
+.buttonview {
+    margin-left: 29px;
+    font-size: 13px;
+    font-weight: light;
+    font-family: SFMedium;
+    color: #0298f6;
+    margin-top: 20px;
+}
+
+.sharedcalender {
+    display: block;
+    margin-top: 17px;
+    font-family: SFbold;
+}
+.overflowlist {
+    overflow-y: scroll;
+    height: 250px;
+}
+
+.image {
+    width: 20px;
+    height: 30px;
+}
+
+::ng-deep .mat-pseudo-checkbox {
+    border: 1px solid;
+}
+
+::ng-deep .matMenuContent .mat-menu-content:not(:empty) {
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+}
+
+::ng-deep .mat-list-base .mat-list-item .mat-list-text,
+.mat-list-base .mat-list-option .mat-list-text {
+    display: block;
+}
+
+/* ::ng-deep input.mat-input-element {
+    padding: 0px!important;
+}
+
+::ng-deep .mat-formfield-infix .mat-formfield-wrapper {
+    padding: 0px!important;
+}
+
+::ng-deep .mat-formfield-infix {
+    width: 252px;
+}
+
+::ng-deep input.mat-input-element {
+    margin-top: 0px;
+} */
+
+::ng-deep .mat-accent .mat-pseudo-checkbox-checked,
+.mat-accent .mat-pseudo-checkbox-indeterminate,
+.mat-pseudo-checkbox-checked,
+.mat-pseudo-checkbox-indeterminate {
+    background: #0298f6;
+}
+
+::ng-deep .fc-button-primary:not(:disabled):active,
+::ng-deep .fc-button-primary:not(:disabled).fc-button-active .fc-button-primary,
+::ng-deep .fc-button-primary:not(:disabled).fc-button-active {
+    background-color: white;
+    color: #000;
+    border: none;
+    font-family: SFBold;
+    font-size: 14px;
+}
+
+::ng-deep .material-icons {
+    font-size: 20px;
+}
+
+::ng-deep .mat-pseudo-checkbox {
+    border: 1px solid;
+    border-color: #697685;
+}
+
+
+/* fullcalendar styles */
+ ::ng-deep .fc-right {
+    text-align: right !important;
+    flex: 1 1 auto;
+}
+
+::ng-deep .fc-button-primary {
+    background-color: transparent;
+    color: #000;
+    border: none;
+    padding: 0.2cm 0.1cm;
+}
+
+::ng-deep .fc-button-primary:hover {
+    background-color: #0298f6;
+    box-shadow: none;
+}
+
+ ::ng-deep .fc-toolbar h2 {
+    font-size: 14px;
+    font-family: SFBold;
+    color: #000;
+}
+
+::ng-deep .fc-unthemed td.fc-today {
+    background: white;
+}
+
+::ng-deep .fc-ltr .fc-axis {
+    text-align: center;
+}
+
+::ng-deep .fc-time-grid .fc-slats .fc-minor td {
+    border-top-style: none;
+}
+
+ ::ng-deep .fc-time-grid .fc-slats td {
+    height: 30px;
+}
+
+/* ::ng-deep .fc-time-grid-container {
+    max-height: 627px;
+} */
+
+::ng-deep .fc-time-grid-container::-webkit-scrollbar-track,
+.overflow::-webkit-scrollbar-track,
+.overflowlist::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    background-color: #F6F8F9;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::ng-deep .fc-time-grid-container::-webkit-scrollbar,
+.overflow::-webkit-scrollbar,
+.overflowlist::-webkit-scrollbar {
+    width: 7px;
+    background-color: #F6F8F9;
+}
+
+::ng-deep .fc-time-grid-container::-webkit-scrollbar-thumb,
+.overflow::-webkit-scrollbar-thumb,
+.overflowlist::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    height: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #D3DCE3;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+::ng-deep .fc-toolbar.fc-header-toolbar {
+     margin-bottom: 0em; 
+}
+::ng-deep .fc-button-primary:not(:disabled):active:focus,
+::ng-deep .fc-button-primary:not(:disabled).fc-button-active:focus,
+::ng-deep .fc-button-primary:not(:disabled).fc-next-button:focus,
+::ng-deep .fc-button-primary:not(:disabled).fc-prev-button:focus {
+  box-shadow: none;
+}
+.isDefaultCal{
+    color: rgb(86, 158, 86);
+    font-size:12px;
+    height:12px;
+}

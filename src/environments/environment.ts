@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl : 'https://api-ism.cloudiumedge.com/',
+  sessionCookieName: 'session_id',
+  cookieSuffix: '_localhost',
+  cookieDomain: 'localhost',
 };
 
 /*

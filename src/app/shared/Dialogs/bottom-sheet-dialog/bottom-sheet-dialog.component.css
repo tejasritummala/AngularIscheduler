@@ -1,0 +1,61 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+::ng-deep .mat-bottom-sheet-container {
+  padding: 0px 0px;
+ 
+  height: auto;
+}
+
+::ng-deep .mat-card {
+  width: 100%;
+}
+
+:host ::ng-deep .sheetHeader {
+  /* color: white;
+  background-color: rgb(66, 134, 244); */
+  font-family: SFMedium;
+  font-weight: medium;
+}
+
+
+
+:host ::ng-deep .mat-toolbar.tollbarsmallwhite.mat-toolbar.mat-toolbar-multiple-rows {
+  height: 50px;
+  background-color: white;
+  font-family: SFLight;
+  font-size: 18px;
+}
+
+
+
+.list mat-list-item {
+  margin-bottom: 1rem;
+  /* width: 90%;
+  margin: 1rem ; */
+}
+
+
+
+.success mat-card {
+  color: rgb(86, 158, 86);
+  font-weight: bold;
+  background-image: linear-gradient(#E5F6EC , #E5F6EC );
+  border: 1px solid rgb(143, 241, 143);
+}
+
+
+.failed mat-card {
+  color: #E77A78 ;
+  font-weight: bold;
+  background-image: linear-gradient(#FEECEC , #FEECEC );
+  border: 1px solid rgb(241, 175, 175);
+}
+
+.duplicate  mat-card {  
+  color:rgb(99, 93, 93);
+  font-weight: bold;
+  background-image: linear-gradient(#F6F6F6 , #F6F6F6 );
+  border: 1px solid rgb(179, 173, 173);
+}

@@ -1,1 +1,833 @@
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+@import url("./assets/css/style.css");
+@import url("./assets/css/website.css");
+@import url("./assets/css/is_icon_font.css");
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+}
+
+.nav-item.nav-link {
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: 'SFMedium';
+    src: url('././assets/font/sf-ui-display-medium.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SFBold';
+    src: url('././assets/font/sf-ui-display-bold.otf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFLight';
+    src: url('././assets/font/sf-ui-display-light.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFSbold';
+    src: url('././assets/font/sf-ui-display-semibold.otf') format('truetype');
+}
+
+body {
+    font-family: 'SFMedium';
+    background: #f4f8f9;
+    font-size: 13px;
+}
+
+a {
+    color: #0298f6;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+/* overriding Material styles start*/
+
+.mat-form-field {
+    font-family: 'SFLight' !important;
+}
+
+.mat-form-field-label, .mat-input-element {
+    font-family: 'SFLight' !important;
+    font-size: 13px !important;
+    font-weight: 100 !important;
+}
+
+.mat-input-element {}
+
+.mat-form-field-autofill-control:-webkit-autofill+.mat-form-field-label-wrapper .mat-form-field-label {
+    font-size: 16px !important;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element, .mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
+    background: #0298f6;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #0298f6;
+}
+
+.mat-error {
+    font-size: 10px;
+}
+
+.mat-placeholder-required {
+    color: #EE4036;
+    font-size: 11px;
+}
+
+/* overriding Material styles end*/
+
+.rc-anchor-light {
+    background: #fff!important;
+    color: #fff!important;
+}
+
+/* ISchedule Styles start*/
+
+.ism_login_main {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.ism_imcslogin_main {
+    background: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)), url(././assets/image/imcs_bgd_pattern_tile_3.svg);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, .9)), to(rgba(255, 255, 255, .9))), url(././assets/image/imcs_bgd_pattern_tile_3.svg);
+    background-size: 28px 45px;
+}
+
+.ism_login {
+    /* border: 1px solid #ebecec; */
+    box-shadow: 0px 0.85px 0.85px -1px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    max-width: 750px;
+    width: 100%;
+    margin: auto;
+    /* display: flex;
+    align-items: center; */
+    padding: 60px 30px 20px;
+    text-align: center;
+    /* min-height: 590px; */
+}
+
+.ism_login .form-control {
+    border: 1px solid #d3dce3;
+    border-radius: 4px;
+    font-family: 'SFLight';
+    font-size: 13px;
+    padding: 2px 15px;
+    height: 45px !important;
+}
+
+.ism_login .form-control:hover, .ism_login .form-control:active, .ism_login .form-control:focus {
+    border: 1px solid #0298f6;
+    outline: none;
+    box-shadow: none;
+}
+
+.ism_login img {
+    width: 140px;
+    margin: auto;
+}
+
+.ism_signin {
+    padding: 40px 0px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+    width: 100%;
+    color: #697685;
+    max-width: 380px;
+    margin: auto;
+}
+
+.ism_signin p {
+    width: 100%;
+    font-size: 18px;
+}
+
+.ism_signin label {
+    width: 100%;
+    text-align: center;
+    /* line-height: 0.1em; */
+    margin: 10px 0 20px;
+}
+
+.ism_signin span {
+    font-family: 'SFLight';
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #697685;
+}
+
+.ism_signin_button {
+    padding-top: 40px;
+}
+
+.ism_signin_button button {
+    background: transparent;
+    border: 1px solid #ebecec;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: 'SFLight';
+    color: #697685;
+    text-align: left;
+}
+
+.ism_signin_button .btn-blue {
+    min-width: 250px;
+    font-size: 13px;
+    min-height: 45px;
+    background-color: #0298f6;
+    border: 1px solid #0298f6;
+    color: #ffffff;
+    text-align: center;
+}
+
+.ism_signin_button img {
+    width: 15px;
+    margin-right: 5px;
+    position: relative;
+    top: -1px;
+}
+
+.ism_login_footer {
+    border-top: 1px solid #ebecec;
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px 10px;
+}
+
+.ism_login_footer img {
+    width: 160px;
+}
+
+.ism_permission {}
+
+.ism_permission span {
+    padding: 5px 0px;
+    font-size: 14px;
+    color: #697685;
+    text-align: left;
+}
+
+/*********** ISchedule Corporate Styles *************/
+
+.ism_corporate {
+    padding: 30px 40px 60px 40px;
+}
+
+.ism_corporate label.ism_labelhead {
+    width: 100%;
+    text-align: left;
+    margin: 10px 0px 10px;
+    font-size: 17px;
+    color: #697685;
+    font-family: 'SFMedium';
+}
+
+.ism_corporatesignup_form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.ism_corporatesignup_form .mat-form-field {
+    width: calc(50% - 12px);
+}
+
+.ism_signup_ftr {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ism_signup_ftr .mat-checkbox {
+    width: 100%;
+}
+
+.ism_signup_ftr .mat-checkbox-label {
+    line-height: 24px;
+    font-size: 13px;
+    font-family: 'SFLight';
+}
+
+.ism_select {
+    position: relative;
+}
+
+select.form-control {
+    background-color: #f3f6f8;
+    -webkit-appearance: button;
+}
+
+select.form-control~.is_down_arrow-1 {
+    position: absolute;
+    right: 8px;
+    top: 11px;
+    font-size: 13px;
+    color: #000000;
+}
+
+.ism_corporate .ism_signin {
+    padding: 15px 0px 0px;
+}
+
+.ism_corporate button, .ism_corporate_signin button {
+    min-width: 250px;
+    font-size: 13px;
+    min-height: 45px;
+    background-color: #0298f6;
+    border: 1px solid #0298f6;
+}
+
+.ism_corporate a {
+    color: #0298f6;
+}
+
+/* The container */
+
+.ism_corporate .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 12px !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #000000;
+    margin-left: 20px;
+}
+
+/* Hide the browser's default checkbox */
+
+.ism_corporate .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+
+.ism_corporate .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    /* background-color: #eee; */
+    background-color: #ffffff;
+    border: 1px solid #d3dce3;
+}
+
+/* On mouse-over, add a grey background color */
+
+.ism_corporate .container:hover input~.checkmark {
+    /* background-color: #ccc; */
+}
+
+/* When the checkbox is checked, add a blue background */
+
+.ism_corporate .container input:checked~.checkmark {
+    /* background-color: #2196F3; */
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.ism_corporate .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+
+.ism_corporate .container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+
+.ism_corporate .container .checkmark:after {
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    top: 5px;
+    width: 6px;
+    height: 6px;
+    background: #0298f6;
+}
+
+.ism_pswrd_eye {
+    position: relative;
+}
+
+.ism_pswrd_eye .is_eye {
+    top: 11px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #697685;
+}
+
+.ism_pswrd_eye input {
+    padding-right: 33px !important;
+}
+
+.ism_corporate_signin {
+    max-width: 505px;
+    padding: 60px;
+}
+
+.ism_corporate_signin .ism_signup {
+    width: 260px;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.ism_corporate_signin .ism_signin {
+    padding: 20px 0px 0px;
+}
+
+.ism_corporate_signin form label {
+    /* width: 100%;
+    text-align: left;
+    margin: 10px 0px 10px;
+    font-size: 17px;
+    color: #697685;
+    font-family: 'SFMedium'; */
+}
+
+.ism_corporate_signin button {
+    width: 100%;
+}
+
+.ism_corporate_signin button a {
+    color: #ffffff;
+    font-family: 'SFLight';
+}
+
+.ism_corporate_signin .ism_frgtpswrd {
+    position: relative;
+    text-align: right;
+    font-size: 10px;
+    color: #0298f6;
+    font-family: 'SFLight';
+    display: block;
+    padding: 5px 0px;
+}
+
+.ism_frgtpswrd button {
+    position: relative;
+    text-align: right;
+    font-size: 10px;
+    color: #0298f6;
+    font-family: 'SFLight';
+    display: block;
+    padding: 5px 0px;
+    background: transparent;
+    border: none;
+    box-shadow: none !important;
+    outline: none;
+    padding: 0px;
+}
+
+.ism_corporate_signin p {
+    width: 100%;
+    text-align: left;
+    margin: 10px 0px 20px;
+    font-size: 15px;
+    color: #697685;
+    font-family: 'SFLight';
+}
+
+.ism_forgot_page {
+    padding: 0px;
+    min-height: auto;
+}
+
+.ism_forgot_page .ism_signup {
+    padding: 0px;
+}
+
+.ism_app_main {
+    display: grid !important;
+    grid-template-columns: 70px 1fr;
+    min-height: calc(100vh - 70px);
+}
+
+.ism_app_left {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* align-items: center; */
+    align-content: baseline;
+    text-align: center;
+    padding: 30px 0px;
+    background: #ffffff;
+    border-right: 1px solid #F5F5F5;
+}
+
+.ism_app_right {
+    padding: 25px;
+    background: #F4F8F9;
+    height: 100%;
+}
+
+.ism_app_head {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+.ism_app_head h4 {
+    font-size: 18px;
+    color: #697685;
+    font-family: 'SFLight';
+    margin-bottom: 20px;
+}
+
+.ism_app_head a {
+    font-size: 13px;
+    font-family: 'SFMedium';
+    color: #0298f6;
+}
+
+/* Dashboard Styles */
+
+.ism_dashboard_month {
+    background: #fff;
+    min-height: 65px;
+    width: 100%;
+    /* display: flex;
+    align-items: center; */
+    border: 1px solid #F5F5F5;
+    margin-bottom: 20px;
+}
+
+.ism_dashboard_month .mat-card-content {
+    padding: 50px;
+    display: block;
+}
+
+.ism_dashboard_month .dropdown {
+    min-width: 200px;
+}
+
+.ism_dashboard_month button {
+    background: transparent;
+    border: transparent;
+    color: #0298f6 !important;
+    font-size: 15px;
+}
+
+.ism_dashboard_month_cl01 {
+    border: 1px solid #ebecec;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* min-height: 40px; */
+    /* min-height: 105px; */
+}
+
+.ism_dashboard_month_cl01 label {
+    padding: 0px 20px;
+    border-right: 1px solid #ebecec;
+    font-size: 14px;
+    min-height: 100px;
+    margin: 0px;
+    box-shadow: 0 0 black;
+    /* min-height: 30px; */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #697685;
+    font-weight: 500;
+    font-family: 'SFBold';
+    /* width: 25%; */
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    text-transform: uppercase;
+}
+
+.ism_dashboard_month_cl01 label:nth-last-child(1) {
+    border-right: none;
+}
+
+.ism_dashboard_month_cl01 label p {
+    font-size: 15px;
+    margin-bottom: 0px;
+    font-weight: 500;
+    color: #697685;
+    font-family: '';
+}
+
+.ism_dashboard_month_cl01 label span {
+    width: 100%;
+    /* padding-bottom: 5px; */
+    font-size: 40px;
+    font-family: 'SFSbold';
+}
+
+.ism_dashboard_mtng {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    /* grid-column-gap: 20px; */
+}
+
+.ism_dashboard_mtng_left {
+    padding-right: 15px;
+}
+
+.ism_dashboard_mtng_right {
+    background: #fff;
+}
+
+.ism_dashboard_mtng_cl01 {
+    border-radius: 4px;
+}
+
+.ism_dashboard_mtng_cl01 .card-body {
+    padding: 20px;
+}
+
+.is_tick {
+    background: rgba(40, 180, 70, .30);
+    color: rgba(40, 180, 70, .90);
+    font-size: 13px;
+}
+
+.ism_dashboard_upcoming {
+    margin: 0px;
+}
+
+.ism_clr_one {
+    background: #fbbb00;
+}
+
+.ism_clr_two {
+    background: #0298f6;
+}
+
+.ism_clr_thre {
+    background: #28b446;
+}
+
+.ism_clr_four {
+    background: #f14336;
+}
+
+.ism_clr_five {
+    color: #fbbb00;
+}
+
+.ism_clr_six {
+    color: #f14336;
+}
+
+.ism_clr_svn {
+    color: #28b446;
+}
+
+.ism_dashboard_userevent {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin-top: 20px;
+}
+
+.ism_dashboard_usercount {
+    min-height: 105px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+    border-bottom: 1px solid #ebecec;
+    color: #697685;
+    font-size: 24px;
+    font-family: 'SFMedium';
+}
+
+.ism_dashboard_usercount label {
+    margin: 0px;
+    padding: 25px 10px 25px 20px;
+}
+
+.ism_dashboard_usercount label:nth-child(1){
+    border-right: 1px solid #ebecec;
+}
+
+.ism_dashboard_usercount span {
+    font-size: 13px;
+    font-family: 'SFLight';
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+}
+
+.ism_dashboard_user, .ism_dashboard_event {
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.ism_dashboard_user {
+    margin-right: 20px;
+}
+
+.ism_dashboard_userevent .card {
+    border-radius: 0px;
+    border: none;
+    color: #697685;
+}
+
+.ism_dashboard_userevent .card-body {
+    padding: 0px;
+}
+
+.ism_dashboard_user_cl01 {
+    /* padding: 20px; */
+}
+
+.ism_dashboard_user_cl02 {
+    border-bottom: 1px solid #ebecec;
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 0px 20px;
+}
+
+.ism_dashboard_user_cl02:nth-last-child(1) {
+    border-bottom: none;
+}
+
+.ism_dashboard_user_cl02 label {
+    margin: 0px;
+    font-size: 13px;
+    font-family: 'SFLight';
+    color: #697685;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.ism_dashboard_user_cl02 label span {
+    font-size: 17px;
+    font-family: 'SFMedium';
+}
+
+.ism_dashboard_user_cl02 .iism_users::before {
+    color: #0298f6;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ism_dashboard_user_cl02 i {
+    width: 5px;
+    height: 5px;
+    display: block;
+    border-radius: 50%;
+    margin: 2px 1px;
+}
+
+.ism_dashboard_event_cl01 {
+    padding: 25px;
+}
+
+.ism_dashboard_event_cl02 {
+    border: 1px solid #ebecec;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    justify-content: left;
+    grid-column-gap: 26px;
+    font-size: 14px;
+    align-items: center;
+    min-height: 80px;
+}
+
+.ism_dashboard_event_cl02:nth-last-child(1) {
+    margin-bottom: 0px;
+}
+
+.ism_dashboard_event_cl02 label {
+    padding-right: 20px;
+    margin: 0px;
+}
+
+.ism_dashboard_event_cl02 label:nth-child(1) {
+    border-right: 1px solid #ebecec;
+}
+
+.ism_circle {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #28b446;
+    display: block;
+}
+
+.ism_user_circle {
+    background: rgba(241, 67, 54, .30);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 13px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* .fc-scroller {
+    height:100vh;
+    min-height:100vh;
+  } */
+
+.mat-calendar-next-button::after, .mat-calendar-previous-button::after {
+    border: none !important;
+    content: '\e80e' !important;
+    font-family: "is_icon_font";
+    margin: 0px !important;
+    transform: none !important;
+    color: #fbbb00;
+}
+
+.mat-calendar-previous-button::after {
+    content: '\e80b' !important;
+}
+
+button:focus {
+    outline: none !important;
+}

@@ -1,0 +1,84 @@
+<div class="isc_calendar_header">
+  <h4 class="main">Calendar</h4>
+  <button class="add" mat-button (click)="createNewEvent()">
+    <mat-icon aria-hidden="false" aria-label="add">
+      add</mat-icon>Add Event
+  </button>
+</div>
+<div id="flex-container">
+  <div class="flex-item" id="flex">
+
+
+    <mat-card class="calendar">
+      <full-calendar [eventTextColor]='options.eventTextColor' [eventBackgroundColor]="options.eventBackgroundColor"
+        [events]="options.events" defaultView="timeGridDay" [plugins]="options.plugins" [header]="options.header"
+        [height]="options.height">
+
+      </full-calendar>
+    </mat-card>
+  </div>
+  <div class="raw-item" id="row">
+
+    <mat-card class="customcard">
+
+      <label class="customlabel">Custom Calendars</label>
+
+      <button class="settingsicon">
+        <i class="is_settings"></i>
+      </button>
+
+    </mat-card>
+    <mat-card class="customcalendar">
+      <!-- Search Field -->
+      <mat-form-field class="search">
+        <input matInput [(ngModel)]="searchText" placeholder="Search">
+        <mat-icon class="searchicon" matSuffix>search</mat-icon>
+      </mat-form-field>
+
+      <!-- <input matInput type="search" [(ngModel)]="searchText" #ctrl="ngModel"> -->
+      <mat-list #calendars class="overflow">
+        <mat-list-item class="user" *ngFor="let arr of calArr| filter : searchText : 'calendar_name'">
+          {{arr.calendar_name}}
+          <span class="example-space"></span>
+          <mat-icon  class="isDefaultCal" *ngIf="arr.is_default != 0" aria-hidden="false" aria-label="add">
+            lens</mat-icon>
+          <button class="vertbutton" mat-icon-button [matMenuTriggerFor]="options">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #options="matMenu">
+            <button mat-menu-item class="menubutton">
+
+              <span>Switch to this calendar</span>
+            </button>
+            <button (click)=setAsDefault(arr) mat-menu-item class="menubutton">
+
+              <span>Set as Default</span>
+            </button>
+
+          </mat-menu>
+
+        </mat-list-item>
+
+
+      </mat-list>
+
+      <button class="buttonadd" mat-button (click)="createNewCalendar()"><img class="addicon"
+          src="../assets/image/add_new-19.svg">&nbsp;&nbsp;Add New Calendar</button>
+      <button class="buttonview" mat-button (click)="onShowAllCalendars()">View All</button>
+      <br>
+      <div class="sharedcalender">Shared Calendars
+        <mat-form-field class="search">
+          <input matInput [(ngModel)]="searchUser" placeholder="Search">
+          <mat-icon class="searchicon" matSuffix>search</mat-icon>
+        </mat-form-field>
+        <mat-selection-list #users class="overflowlist">
+          <mat-list-option class="user" *ngFor="let arr of usersArr| filter : searchUser" checkboxPosition="before">
+            <img class="image" src="../assets/image/user.svg" /> {{arr.name}}
+          </mat-list-option>
+
+
+        </mat-selection-list>
+      </div>
+    </mat-card>
+  </div>
+</div>

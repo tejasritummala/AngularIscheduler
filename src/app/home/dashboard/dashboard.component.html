@@ -1,0 +1,23 @@
+<div class="ism_app_head">
+    <h4 *ngIf="dashboard">Total No of Events</h4>
+    <h4 *ngIf="!dashboard">Events</h4>
+</div>
+<div class="ism_dashboard_mtng">
+    <div class="ism_dashboard_mtng_left">
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
+    </div>
+    <div class="ism_dashboard_mtng_right">
+        <div id="dncalendar-container">
+            <div style="width: 100%;  margin: 0 auto;">
+                <mat-calendar [selected]="selectedDate" (selectedChange)="onSelect($event)"></mat-calendar>
+                <div class="ism_dashboard_activecalendar">
+                    <mat-label class="ism_app_head"><h4>Recently Active Calendars</h4></mat-label>
+                    <mat-list role="list">
+                        <mat-list-item role="listitem">Calendar 1</mat-list-item>
+                        <mat-list-item role="listitem">Calendar 2</mat-list-item>
+                    </mat-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

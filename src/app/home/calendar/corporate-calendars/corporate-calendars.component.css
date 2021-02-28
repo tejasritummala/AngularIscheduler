@@ -1,0 +1,62 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+table {
+    width: 100%;
+ }
+ .transparentHeader{
+  background-color: transparent;
+} 
+.headerClass{
+  font-family: SFLight;
+  font-weight: Medium;  
+}
+ :host ::ng-deep .container-fluid{
+  background-color: transparent;
+}
+.hline{
+  display:block;
+  width:100% ;
+  border-top: 1px solid #EDEEEE; 
+}
+
+.mat-card {
+  background: transparent;
+  box-shadow: none !important;
+  /* height: 55px; */
+}
+mat-toolbar.tollbarsmall.mat-toolbar.mat-toolbar-single-row {
+  height: 56px;
+  background-color: #FBFCFC;
+}
+mat-toolbar.tollbarsmallwhite.mat-toolbar.mat-toolbar-single-row {
+  height: 56px;
+  background-color: white;
+}
+.mat-form-field {
+  font-size: 14px; 
+}
+mat-paginator.customPagenator.mat-paginator {
+  background-color: transparent;
+}
+.customPagenator ::ng-deep.mat-icon-button[disabled][disabled] {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+.customPagenator ::ng-deep .mat-icon-button {
+  color: #25a9e0;
+}
+mat-header-row.ng-star-inserted {
+    background-color: #FBFCFC;
+} 
+::ng-deep .mat-header-cell{
+  font-family: SFMedium;
+  font-weight: Bold; 
+}
+::ng-deep .mat-cell{
+  font-family: SFLight;
+  font-weight: normal;
+}
+ ::ng-deep .mat-checkbox-layout {
+  margin-bottom: 0px !important;
+}
+

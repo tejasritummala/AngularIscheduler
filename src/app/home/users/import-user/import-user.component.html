@@ -1,0 +1,66 @@
+<div>
+    <h2 class="main">Import User</h2>
+
+
+    <!-- <mat-card-header> -->
+    <!-- <mat-toolbar>
+                <mat-toolbar-row> -->
+    <mat-card class="header">Bulk import User</mat-card>
+    <!-- </mat-card-header> -->
+
+
+    <mat-card class="example-card" style="height:450px;">
+        <mat-card-content>
+
+                <div class="upload">
+                        <p class="text">
+                            Upload the CSV file with the info you want to import here. We'll Check it and let you know if there's anything you need to fix.
+                        </p>
+                        <!-- <br> -->
+                        <p class="text">Don't have a file? <span class="linkspan" (click)="templatedownload()"> Download CSV Template </span>
+                        </p>
+                    </div>
+            
+                   
+                    <div class="uploadmain">
+                        <ngx-file-drop dropZoneClassName="filedrop" contentClassName="filedrop" dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)">
+                            <ng-template ngx-file-drop-content-tmp>
+                        <p style="text-align: center">
+                            <button class="uploadfile"> <img class="iconimage" src="../assets/image/ism_upload_csv.svg" /></button>
+                        </p>
+                        <p class="text">
+                            Drag and drop to upload</p>
+                        <p class="nexttext"> <label>or</label><label>
+                            <input type="file" (change)="uploadedFiles($event)" #inputFile style="display: none;">
+                            <span class="browse">&nbsp;browse</span>
+                        </label> to choose a file </p>
+                    </ng-template>
+                </ngx-file-drop>
+
+                    </div>
+               
+
+            <mat-chip-list class ='example-chip-list uploadContentChip' *ngIf="filename?.length > 0">
+                    <mat-chip class = "matchipupload" selected (removed)="remove()">
+                        {{filename}}
+                        <mat-icon matChipRemove>cancel</mat-icon>
+    
+                    </mat-chip>
+         </mat-chip-list>
+    
+        </mat-card-content>
+
+        <mat-card-actions>
+            <mat-toolbar style="background-color:transparent;">
+                <mat-toolbar-row>
+
+                    <span class="example-spacer"></span>
+                    <button class="importbutton" [disabled]="isDisabled" (click)="importuser()">Import User</button>
+                    <button class="cancel" mat-button (click)="cancel()">Cancel</button>
+                </mat-toolbar-row>
+            </mat-toolbar>
+
+        </mat-card-actions>
+
+    </mat-card>
+</div>

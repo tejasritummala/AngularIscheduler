@@ -1,0 +1,33 @@
+
+
+<div class="ism_dashboard_mtng_cl01">
+        <div class="isc-events">
+            <mat-card>
+                <mat-card-header>Events List
+                    <button mat-icon-button aria-label="Example icon-button with a close icon" class="isc_events_close"
+                        (click)="closeForm()">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-card-header>
+                <hr>
+                <mat-card-content>
+                    <div>
+                        <h6>Events on {{date}} ({{events.length}})</h6>
+                        <br>
+                        <div *ngFor="let el of events" class="isc-evts">
+                            <div>
+                                {{date}}   {{el.eventTime}}<br>
+                                {{el.calName}}
+                            </div>
+                            <mat-divider [vertical]="true"></mat-divider>
+                            {{el.eventName}}
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+    
+        </div>
+    </div>
+    <div class="ism_dashboard_mtng_cl01 ism_dashboard_upcoming">
+    
+    </div>

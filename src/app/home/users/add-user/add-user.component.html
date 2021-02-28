@@ -1,0 +1,223 @@
+
+<div class="add-user">{{isAddUser ? 'Add User' : 'Edit user'}}</div>
+<div class="mat-elevation-z8 user-card">User Type
+    <span *ngIf="isAddUser"> :{{userdata.user_type}} </span>
+</div>
+<mat-card class="example-card">
+    <mat-card-content>
+        <ng-template [ngIf]="isAddUser" [ngIfElse]="edituser">
+            <mat-tab-group disableRipple>
+                <mat-tab class="users-team" label="External participant">
+                    <div class="team user-tab">
+                        <form [formGroup]="addexternalForm" #externalForm="ngForm" (ngSubmit)="onFormSubmit('External')">
+                            <div>
+                                <div formArrayName="users">
+                                    <div *ngFor="let emp of users.controls; let i = index" [formGroupName]="i">
+                                            
+                                        <mat-form-field class="formField">
+                                            <input class="user-input" matInput placeholder="First Name" name="firstname"
+                                                formControlName="firstname" required>
+                                            <mat-error class="error-class"
+                                                *ngIf="users.controls[i].get('firstname').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                                First Name is required.
+                                            </mat-error>
+                                        </mat-form-field>
+
+                                        <mat-form-field class="formField">
+                                            <input class="user-input" matInput placeholder="Last Name" name="lastname"
+                                                formControlName="lastname" required>
+                                            <mat-error class="error-class"
+                                                *ngIf="users.controls[i].get('lastname').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                                Last Name is required.
+                                            </mat-error>
+                                        </mat-form-field>
+
+                                        <mat-form-field class="formField">
+                                            <input class="user-input" matInput placeholder="Email" name="email"
+                                                formControlName="email" required>
+                                            <mat-error class="error-class"
+                                                *ngIf="users.controls[i].get('email').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                                Email is required.
+                                            </mat-error>
+                                            <mat-error class="error-class"
+                                                *ngIf="users.controls[i].get('email').errors?.email && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                                Invalid Email address. </mat-error>
+                                        </mat-form-field>
+                                        <button class="delete-button" *ngIf="i>0" mat-button type="button"
+                                            (click)="deleteuser(i , 'External')" disableRipple><img class="delet-button"
+                                                src="../assets/image/remove-19.svg">Delete</button>
+                                        <button class="add-button" *ngIf="i==0" mat-button type="button"
+                                            (click)="addnewuser( 'External')" disableRipple><img class="add_image"
+                                                src="../assets/image/add_new.svg"> Add
+                                            New</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <mat-toolbar>
+                                <mat-toolbar-row>
+                                    <span class="example-spacer"></span>
+                                    <button class="user-button">Add User</button>
+                                    <button class="cancel-user" type="button" mat-button (click)="onCancel()"> or
+                                        Cancel</button>
+                                </mat-toolbar-row>
+                            </mat-toolbar>
+                        </form>
+                    </div>
+                </mat-tab>
+                <mat-tab class="users-team" label="Corporate user">
+                    <div class="team user-tab">
+                        <form [formGroup]="addCorporateForm" #corporateForm="ngForm" (ngSubmit)="onFormSubmit('Corporate')">
+                            <div>
+                                <div formArrayName="users">
+                                    <div *ngFor="let emp of corpusers.controls; let i = index" [formGroupName]="i">
+                                        <mat-form-field class="formField">
+                                            <input class="user-input" matInput placeholder="First Name" name="firstname"
+                                                formControlName="firstname" required>
+                                            <mat-error class="error-class"
+                                                *ngIf="corpusers.controls[i].get('firstname').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                                First Name is required.
+                                            </mat-error>
+                                        </mat-form-field>
+
+                                        <mat-form-field class="formField">
+                                            <input class="user-input" matInput placeholder="Last Name" name="lastname"
+                                                formControlName="lastname" required>
+                                            <mat-error class="error-class"
+                                                *ngIf="corpusers.controls[i].get('lastname').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                                Last Name is required.
+                                            </mat-error>
+                                        </mat-form-field>
+
+                                        <mat-form-field class="formField">
+                                            <input class="user-input" matInput placeholder="Email" name="email"
+                                                formControlName="email" required>
+                                            <mat-error class="error-class"
+                                                *ngIf="corpusers.controls[i].get('email').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                                Email is required.
+                                            </mat-error>
+                                            <mat-error class="error-class"
+                                                *ngIf="corpusers.controls[i].get('email').errors?.email && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                                Invalid Email address. </mat-error>
+                                        </mat-form-field>
+                                        <button class="delete-button" *ngIf="i>0" mat-button type="button"
+                                            (click)="deleteuser(i , 'Corporate')" disableRipple><img
+                                                class="delet-button" src="../assets/image/remove-19.svg">Delete</button>
+                                        <button class="add-button" *ngIf="i==0" mat-button type="button"
+                                            (click)="addnewuser('Corporate')" disableRipple><img class="add_image"
+                                                src="../assets/image/add_new.svg"> Add
+                                            New</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <mat-toolbar>
+                                <mat-toolbar-row>
+                                    <span class="example-spacer"></span>
+                                    <button class="user-button">Add User</button>
+                                    <button class="cancel-user" type="button" mat-button (click)="onCancel()"> or
+                                        Cancel</button>
+                                </mat-toolbar-row>
+                            </mat-toolbar>
+                        </form>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </ng-template>
+        <ng-template #edituser>
+            <div class="team user-tab">
+
+                <form  *ngIf="userdata.user_type !== 'corporate'" [formGroup]="addexternalForm" (ngSubmit)="onFormSubmit('External')">
+                    <div>
+                        <div formArrayName="users">
+                            <div *ngFor="let emp of users.controls; let i = index" [formGroupName]="i">
+                                <mat-form-field class="formField">
+                                    <input class="user-input" matInput placeholder="First Name" name="firstname"
+                                        formControlName="firstname" required>
+                                    <mat-error class="error-class"
+                                        *ngIf="users.controls[i].get('firstname').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                        First Name is required.
+                                    </mat-error>
+                                </mat-form-field>
+
+                                <mat-form-field class="formField">
+                                    <input class="user-input" matInput placeholder="Last Name" name="lastname"
+                                        formControlName="lastname" required>
+                                    <mat-error class="error-class"
+                                        *ngIf="users.controls[i].get('lastname').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                        Last Name is required.
+                                    </mat-error>
+                                </mat-form-field>
+
+                                <mat-form-field class="formField">
+                                    <input class="user-input" matInput placeholder="Email" name="email"
+                                        formControlName="email" required>
+                                    <mat-error class="error-class"
+                                        *ngIf="users.controls[i].get('email').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                        Email is required.
+                                    </mat-error>
+                                    <mat-error class="error-class"
+                                        *ngIf="users.controls[i].get('email').errors?.email && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                        Invalid Email address. </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <mat-toolbar>
+                        <mat-toolbar-row>
+                            <span class="example-spacer"></span>
+                            <button class="user-button">Update User</button>
+                            <button class="cancel-user" type="button" mat-button (click)="onCancel()"> or
+                                Cancel</button>
+                        </mat-toolbar-row>
+                    </mat-toolbar>
+                </form>
+
+                <form  *ngIf="userdata.user_type == 'corporate'" [formGroup]="addCorporateForm" (ngSubmit)="onFormSubmit('Corporate')">
+                    <div>
+                        <div formArrayName="corpusers">
+                            <div *ngFor="let emp of corpusers.controls; let i = index" [formGroupName]="i">
+                                <p>corporate</p>
+                                <mat-form-field class="formField">
+                                    <input class="user-input" matInput placeholder="First Name" name="firstname"
+                                        formControlName="firstname" required>
+                                    <mat-error class="error-class"
+                                        *ngIf="corpusers.controls[i].get('firstname').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                        First Name is required.
+                                    </mat-error>
+                                </mat-form-field>
+
+                                <mat-form-field class="formField">
+                                    <input class="user-input" matInput placeholder="Last Name" name="lastname"
+                                        formControlName="lastname" required>
+                                    <mat-error class="error-class"
+                                        *ngIf="corpusers.controls[i].get('lastname').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                        Last Name is required.
+                                    </mat-error>
+                                </mat-form-field>
+
+                                <mat-form-field class="formField">
+                                    <input class="user-input" matInput placeholder="Email" name="email"
+                                        formControlName="email" required>
+                                    <mat-error class="error-class"
+                                        *ngIf="corpusers.controls[i].get('email').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                        Email is required.
+                                    </mat-error>
+                                    <mat-error class="error-class"
+                                        *ngIf="corpusers.controls[i].get('email').errors?.email && isValidFormSubmitted != null && !isValidFormSubmitted">
+                                        Invalid Email address. </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <mat-toolbar>
+                        <mat-toolbar-row>
+                            <span class="example-spacer"></span>
+                            <button class="user-button">Update User</button>
+                            <button class="cancel-user" type="button" mat-button (click)="onCancel()"> or
+                                Cancel</button>
+                        </mat-toolbar-row>
+                    </mat-toolbar>
+                </form>
+            </div>
+        </ng-template>
+    </mat-card-content>
+</mat-card>

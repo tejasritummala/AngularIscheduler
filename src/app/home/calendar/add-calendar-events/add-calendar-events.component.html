@@ -1,0 +1,104 @@
+<div class="ism_app_head">
+    <h4>Create Event</h4>
+</div>
+<div fxLayout="column" fxFlexAlign="space-evenly stretch">
+    <mat-card fxFlex style="width:50%;float:left;margin-right:1.5%;">
+        <form [formGroup]="createEventsForm">
+            <mat-form-field class=" calendar-width">
+                <mat-label>Event Name:</mat-label>
+                <input matInput placeholder="Event Name" formControlName="evtName" required>
+            </mat-form-field><br>
+            <mat-form-field class="field-width">
+                <input matInput [matDatepicker]="picker" placeholder="Choose Date" formControlName="date" required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>&nbsp;
+            <mat-label class="calendar-event time-select">Select Time</mat-label>
+            <mat-form-field style="width: 12%;text-align:left;">
+                <!-- -->
+
+                <input class="font-bold" matInput [ngxTimepicker]="toggleTimepicker" [format]="24" [value]="'09:00 am'"
+                    [disableClick]="true" name="appointmentTime" formControlName="time" readonly>
+                <!-- </div> -->
+                <ngx-material-timepicker-toggle matSuffix [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
+                <ngx-material-timepicker matSuffix #toggleTimepicker></ngx-material-timepicker>
+            </mat-form-field>
+            <mat-label class="calendar-event time-select font-bold"> to</mat-label>
+            <mat-form-field style="width: 12%;margin:1%;text-align:left;">
+                <input class="font-bold" matInput [ngxTimepicker]="toggleTimepicker1" [format]="24" [value]="'12:00 pm'"
+                    [disableClick]="true" name="appointmentTime" formControlName="toTime" readonly>
+                <!-- </div> -->
+                <ngx-material-timepicker-toggle matSuffix [for]="toggleTimepicker1"></ngx-material-timepicker-toggle>
+                <ngx-material-timepicker matSuffix #toggleTimepicker1></ngx-material-timepicker>
+            </mat-form-field> <br>
+            <mat-form-field class="field-width">
+                <mat-label>Location:</mat-label>
+                <input matInput placeholder="Location" formControlName="location">
+            </mat-form-field>&nbsp;
+
+            <mat-form-field class="status-width">
+                <mat-label class="calendar-event">Status</mat-label>
+                <mat-select [(value)]="selectedValue" name="state" disableRipple>
+                    <mat-option class="calendar-events" *ngFor="let state of states" [value]="state.value">
+                        {{state.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="calendar-width">
+                <mat-label>Description:</mat-label>
+                <input matInput placeholder="Description" formControlName="description">
+            </mat-form-field><br>
+            <div class="invitee-class">Add Invitees:</div>
+            <div formArrayName="email" *ngFor="let email of emailArr.controls; let i = index">
+                <div [formGroupName]="i">
+                    <mat-form-field class="email-width array-class">
+
+                        <input matInput placeholder="Type email" name="email" formControlName="email">
+                    </mat-form-field>
+
+                    <button class="imcs_mat_btn imcs_mat_btn_noborder">
+                        <mat-icon aria-hidden="false" aria-label="add" (click)="addNew()" *ngIf="i==0">
+                            add_circle_outline</mat-icon>
+                        <mat-icon aria-hidden="false" aria-label="delete" (click)="remove(email)" *ngIf="i!=0">delete
+                        </mat-icon>
+
+                    </button>
+                </div>
+
+            </div>
+            <!-- <a href=""class="shared-calendar">Select from shared calendars</a> -->
+            <div class="clear">
+                <button (click)="onCreateEvent()" class="event-add">
+                    Create Event
+                </button>
+
+                <button mat-button (click)="onCancelEvent()" class="event-cancel">Cancel</button>
+            </div>
+        </form>
+    </mat-card>
+
+    <mat-card fxFlex style="width:25%;float:left;">
+        <span class="team-class">Add Team Members</span> <br>
+        <mat-form-field class="search-input">
+            <input matInput [(ngModel)]="searchUser" placeholder="Search">
+            <mat-icon matSuffix color=#697685>search</mat-icon>
+        </mat-form-field>
+        <!-- <button class="selection-button">Add Selected</button>  -->
+        <div class="scrollbar-calendar-event">
+            <div class="force-overflow">
+                <mat-selection-list #users>
+
+                    <mat-list-option class="select-class" fxFlex *ngFor="let arr of usersArr| filter : searchUser"
+                        checkboxPosition="before">
+                        <img src="../assets/image/user.svg" style="width:20px;height:20px;margin-right:10px;">
+                        {{arr.name}}
+                    </mat-list-option>
+
+                    <!-- <span class="spacer"></span><button class="selection-button">Add</button> -->
+                </mat-selection-list>
+            </div>
+        </div>
+    </mat-card>
+</div>
+<!-- </div> -->

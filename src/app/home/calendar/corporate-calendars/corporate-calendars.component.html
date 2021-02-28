@@ -1,0 +1,80 @@
+<div>
+    <mat-toolbar class="transparentHeader">
+        <mat-toolbar-row>
+          <span class="headerClass">Corporate Calendars ({{dataSource.data.length}} )</span>        
+        </mat-toolbar-row>
+      </mat-toolbar>
+    <mat-card>
+        <mat-card-content>
+            <span class="hline"></span>
+            <mat-toolbar class="tollbarsmall">            
+                    <span class="example-spacer"></span>
+                    <button mat-icon-button (click)="closeForm()">
+                        <mat-icon>close</mat-icon>
+                    </button>
+            </mat-toolbar>
+            <span class="hline"></span>
+            <mat-toolbar class="tollbarsmallwhite">
+                <mat-form-field>
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                    <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+                <span class="example-spacer"></span>
+                <mat-paginator class="customPagenator" [length]="10" [pageSize]="5" [pageSizeOptions]="[5, 10]">
+                </mat-paginator>
+            </mat-toolbar>
+            <span class="hline"></span>
+            <div class="example-container mat-elevation-z8">
+                <mat-table [dataSource]="dataSource" matSort>
+
+                    <!--- Note that these columns can be defined in any order.
+                        The actual rendered columns are set as a property on the row definition" -->
+                    <ng-container matColumnDef="select">
+                        <mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggle() : null"
+                                [checked]="selection.hasValue() && isAllSelected()"
+                                [indeterminate]="selection.hasValue() && !isAllSelected()">
+                            </mat-checkbox>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)">
+                            </mat-checkbox>
+                        </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="calName">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Name of Calendar</mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            {{element.calName}}
+                        </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="createdUser">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Created User</mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            {{element.createdUser}}
+                        </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="createdDateandTime">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Created Date and Time</mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            {{element.createdDateandTime}}
+                        </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="lastActivity">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Last Activity</mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            {{element.lastActivity}}
+                        </mat-cell>
+                    </ng-container>
+
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

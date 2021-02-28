@@ -1,0 +1,127 @@
+@font-face {
+    font-family: 'SFMedium';
+    src: url('../font/sf-ui-display-medium.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SFBold';
+    src: url('../font/sf-ui-display-bold.otf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFLight';
+    src: url('../font/sf-ui-display-light.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFSbold';
+    src: url('../font/sf-ui-display-semibold.otf') format('truetype');
+}
+
+body {
+    font-family: 'SFMedium';
+}
+
+body {
+    background: #f4f8f9;
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.ism_login_main {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)), url(../image/imcs_bgd_pattern_tile_3.svg);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, .9)), to(rgba(255, 255, 255, .9))), url(../image/imcs_bgd_pattern_tile_3.svg);
+    background-size: 28px 45px;
+    padding: 40px 20px;
+}
+
+.ism_login {
+    /* border: 1px solid #ebecec; */
+    box-shadow: 0px 0.85px 0.85px -1px rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    max-width: 750px;
+    width: 100%;
+    margin: auto;
+    /* display: flex;
+    align-items: center; */
+    padding: 60px 30px 20px;
+    text-align: center;
+    /* min-height: 590px; */
+}
+
+.ism_login img {
+    width: 160px;
+    margin: auto;
+}
+
+.ism_signin {
+    padding: 40px 0px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+    width: 100%;
+    color: #657685;
+    max-width: 380px;
+    margin: auto;
+}
+
+.ism_signin p {
+    width: 100%;
+    font-size: 18px;
+}
+
+.ism_signin label {
+    width: 100%;
+    text-align: center;
+    /* line-height: 0.1em; */
+    margin: 10px 0 20px;
+}
+
+.ism_signin span {
+    font-family: 'SFLight';
+}
+
+.ism_signin_button {
+    padding-top: 40px;
+}
+
+.ism_signin_button button {
+    background: transparent;
+    border: 1px solid #ebecec;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: 'SFLight';
+    color: #657685;
+    text-align: left;
+}
+
+.ism_signin_button img{
+    width: 15px;
+    margin-right: 5px;
+    position: relative;
+    top: -1px;
+}
+
+.ism_login_footer {
+    border-top: 1px solid #ebecec;
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px 10px;
+}
+
+.ism_login_footer img {
+    width: 160px;
+}

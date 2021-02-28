@@ -1,0 +1,299 @@
+<div class="container-fluid">
+  <div class="ism_landing">
+    <section class="ism_pricing_main">
+      <div class="ism_landing_header ism_landing_subheader">
+        <div class="ism_max_width">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <img src="../../../assets/image/ism_logo_scroll.svg" alt="Logo">
+            </a>
+            <div class="ism_getstarted_btn res">
+              <button type="button" class="">
+                <a (click)="sendMessage($event)">Get Started</a>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" (click)="sendMessage($event)">Product
+                  <span class="sr-only">(current)</span>
+                </a>
+                <a class="nav-item nav-link" href="#">Integrations</a>
+                <a class="nav-item nav-link active" (click)="sendMessage($event)">Pricing</a>
+                <a class="nav-item nav-link" href="#">Support</a>
+                <a class="nav-item nav-link" href="#">FAQ</a>
+                <a class="nav-item nav-link" (click)="sendMessage($event)">Log In</a>
+              </div>
+            </div>
+            <div class="ism_getstarted_btn desk">
+              <button type="button" class="">
+                <a (click)="sendMessage($event)">Get Started</a>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="ism_max_width">
+        <div class="ism_pricing_details">
+          <h2>Pricing Details</h2>
+          <label>Select your best plan and unlock full features</label>
+          <div class="ism_pricing_details_cl01">
+            <div class="ism_pricing_details_cl02">
+              <div>
+                For
+                <br>
+                <h4>Personal</h4>
+              </div>
+              <div>
+                <label>$68</label>
+                <span>$5.67/month billed annually</span>
+              </div>
+              <button type="button">Buy Subscription</button>
+            </div>
+
+            <div class="ism_pricing_details_cl02">
+              <div class="ism_label_popular">Popular</div>
+              <div>
+                For
+                <br>
+                <h4>Personal Plus</h4>
+              </div>
+              <div>
+                <label>$85</label>
+                <span>$7.08/month billed annually</span>
+              </div>
+              <button type="button">Buy Subscription</button>
+            </div>
+
+            <div class="ism_pricing_details_cl02">
+              <div>
+                For
+                <h4>Team</h4>
+              </div>
+              <div>
+                <label>$168</label>
+                <span>$7.08/month billed annually</span>
+              </div>
+              <button type="button">Buy Subscription</button>
+            </div>
+
+          </div>
+        </div>
+        <div class="ism_plan_features">
+          <h2>Compare plan features</h2>
+          <div class="ism_plan_features_cl01">
+            <!-- DIRTY Responsive pricing table HTML -->
+
+            <article>
+
+              <ul>
+                <li [className]="id === 2 ? 'bg-blue active' : 'bg-blue'">
+                  <button (click)="onBtnClick($event)">Personal</button>
+                </li>
+                <li [className]="id === 3 ? 'bg-blue active' : 'bg-blue'">
+                  <button (click)="onBtnClick($event)">Personal Plus</button>
+                </li>
+                <li [className]="id === 4 ? 'bg-blue active' : 'bg-blue'">
+                  <button (click)="onBtnClick($event)">Team</button>
+                </li>
+              </ul>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th class="">Features</th>
+                    <th class="">Personal</th>
+                    <th class="">Personal Plus</th>
+                    <th class="">Team</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Personal Scheduling link</td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                    <td class="default">
+                      <span class="is_tick"></span>
+                    </td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Google Calender Sync</td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                    <td class="default">
+                      <span class="is_tick"></span>
+                    </td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Upload your own logo & choose colors</td>
+                    <td>
+                      <span class="hide"></span>
+                    </td>
+                    <td class="default">
+                      <span class="is_tick"></span>
+                    </td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Invite as many meeting participants as you want</td>
+                    <td>
+                      <span class="hide"></span>
+                    </td>
+                    <td class="default">
+                      <span class="is_tick"></span>
+                    </td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Integrate your calender & address book</td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                    <td class="default">
+                      <span class="is_tick"></span>
+                    </td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Poll participants to vote on times for the meeting</td>
+                    <td>
+                      <span class="hide"></span>
+                    </td>
+                    <td class="default">
+                      <span class="is_tick"></span>
+                    </td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Automatic time zone detection</td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                    <td class="default">
+                      <span class="is_tick"></span>
+                    </td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Customize availibility for each group member</td>
+                    <td>
+                      <span class="hide"></span>
+                    </td>
+                    <td class="default">
+                      <span class="is_tick"></span>
+                    </td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Send meeting reminders</td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                    <td class="default">
+                      <span class="is_tick"></span>
+                    </td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Customized welcome message</td>
+                    <td>
+                      <span class="hide"></span>
+                    </td>
+                    <td class="default">
+                      <span class="is_tick"></span>
+                    </td>
+                    <td>
+                      <span class="is_tick"></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </article>
+          </div>
+        </div>
+        <div class="ism_learn_more">
+          <div>
+            <h2>Want to learn more?</h2>
+            <label>Download our datasheet</label>
+          </div>
+          <div>
+            <button type="button">Download file</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="ism_footer">
+      <div class="ism_footer_cl01">
+        <div class="ism_max_width">
+          <div class="ism_footer_cl011">
+            <img src="../../../assets/image/ism_logo_scroll.svg" alt="logo">
+            <div class="ism_footer_cl012">
+              <h3>PRODUCTS</h3>
+              <a href="">Features</a>
+              <a href="">How to work?</a>
+              <a href="">FAQs</a>
+            </div>
+            <div class="ism_footer_cl012">
+              <h3>MENU</h3>
+              <a href="">Home</a>
+              <a href="">Integrations</a>
+              <a href="pricing.html">Pricing</a>
+              <a href="">Support</a>
+            </div>
+            <div class="ism_footer_cl012">
+              <h3>SOCIAL</h3>
+              <a href="">Facebook</a>
+              <a href="">Dribble</a>
+              <a href="">Twitter</a>
+              <a href="">Instagram</a>
+            </div>
+            <div class="ism_footer_cl012">
+              <h3>COMPANY</h3>
+              <a href="">Careers</a>
+              <a href="">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ism_footer_cl02">
+        <div class="ism_max_width">
+          <div class="ism_footer_cl022">
+            <div>
+              <label>Terms & Conditions Privacy Policy</label>
+            </div>
+            <div>
+              <label>Copyright © --------------2019</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>

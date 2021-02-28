@@ -1,0 +1,112 @@
+<div class="container-fluid">
+    <mat-tab-group>
+        <mat-tab label="Profile">
+            <div id="flex-container">
+                <div class="customcard">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                            <div>
+                                <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'">
+                            </div>
+                            <button class="profile-button" mat-button>Upload New </button>
+                            <button class="profile-button" mat-button> Remove </button>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="example-container">
+                                <form [formGroup]="profileForm" (ngSubmit)="onSaveprofile()">
+                                    <br />
+                                    <mat-form-field class="formField">
+                                        <input class="user-input" matInput placeholder="Name:" name="name"
+                                            formControlName="name">
+                                        <mat-error>{{getErrorMessage2('name')}}</mat-error>
+                                    </mat-form-field>
+                                    <br />
+                                    <mat-form-field class="formField">
+                                        <input class="user-input" matInput placeholder="Welcome Text:" name="name"
+                                            formControlName="welcometext">
+                                        <mat-error>{{getErrorMessage2('welcometext')}}</mat-error>
+                                    </mat-form-field>
+                                    <br />
+                                    <br />
+                                    <h6>Share calendar Privately</h6>
+                                    <mat-form-field class="formField">
+                                        <input type="email" class="user-input" matInput placeholder="Welcome Text:"
+                                            name="email" formControlName="email">
+                                        <mat-icon matSuffix>add_circle_outline</mat-icon>
+                                        <mat-error>{{getErrorMessage2('email')}}</mat-error>
+                                    </mat-form-field>
+
+                                    <mat-checkbox class="chkbox" formControlName="public">Make my profile public
+                                    </mat-checkbox>
+
+
+                                    <br />
+                                    <br />
+                                    <h6>iSchedulemeeting Public Profile</h6>
+                                    <a href="lkjdfkds">hdgfdsgf/skjdhgnfdgfdh</a>
+                                    <div class="buttondiv">
+                                        <button class="createbutton" mat-button>
+                                            Save </button>
+                                        <button class="cancelbutton" mat-button>Clear</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Change Password">
+            <div id="flex-container">
+                <div class="flex-item">
+                    <div class="customcard">
+                        <mat-card class="example-card">
+                            <mat-card-content>
+                                <form class="example-form" [formGroup]="changepwdform">
+                                    <mat-form-field>
+                                        <input matInput placeholder="Current Password" formControlName="currentpassword"
+                                            required>
+                                        <mat-error>{{getErrorMessage('currentpassword')}}</mat-error>
+                                    </mat-form-field>
+                                    <br />
+                                    <mat-form-field>
+                                        <input matInput placeholder="New Password" [type]="phide ? 'text' : 'password'"
+                                            formControlName="newpassword" required>
+
+                                        <mat-error>{{getErrorMessage('newpassword')}}</mat-error>
+                                    </mat-form-field>
+                                    <br />
+                                    <mat-form-field>
+                                        <input matInput placeholder="Confirm Password"
+                                            [type]="phide ? 'text' : 'password'" formControlName="confirmpassword"
+                                            required>
+                                        <mat-icon matSuffix (click)="phide = !phide">
+                                            {{phide ?  'visibility' :'visibility_off'}}
+                                        </mat-icon>
+                                        <mat-error>{{getErrorMessage('confirmpassword')}}</mat-error>
+                                        <mat-error *ngIf="changepwdform.controls.confirmpassword.errors">Password
+                                            mismatch
+                                        </mat-error>
+                                    </mat-form-field>
+
+
+                                    <br />
+                                    <br />
+                                    <!-- <div class="buttondiv"> -->
+                                    <button type="submit" class="btn btn-primary btn-raised"
+                                        (click)="onSubmitchngPwd()">
+                                        <a>Save</a>
+                                    </button>
+
+                                    <!-- </div> -->
+                                </form>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+
+        </mat-tab>
+    </mat-tab-group>
+
+</div>

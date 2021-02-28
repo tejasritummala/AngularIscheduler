@@ -1,0 +1,623 @@
+{
+	"info": {
+		"_postman_id": "419af968-4f7c-439d-9980-2ddbd7a4fe5a",
+		"name": "iScheduler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [     
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_name\": \"visak\",\n    \"password\": \"vishaknk\",\n    \"source\": \"web\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "session_id",
+						"value": "3861ac82cf3046a1916b64a8d386f0c0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_name\": \"visak\",\n    \"password\": \"vishaknk\",\n    \"email_id\": \"visak@cloudium.io\",\n    \"first_name\": \"Visak\",\n    \"last_name\": \"N Kumar\",\n    \"role\": 0,\n    \"company_id\": \"5da6132d8d0538f6e65f5553\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Microsoft Auth2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "cc7d4c1d-6679-49b2-aa70-aad5d21d1c02",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "Calendars.ReadWrite",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "M69c7fd8e-c608-1feb-fdb7-f0af830dcd45",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "0qqmx75Uvg?hjD7MXJnX?FV[VY@u5?m4",
+							"type": "text"
+						},
+						{
+							"key": "Host",
+							"value": "https://login.microsoftonline.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"common",
+						"oauth2",
+						"v2.0",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get calendar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "session_id",
+						"value": "3861ac82cf3046a1916b64a8d386f0c0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ids\": [\n        \"402e5d9ca1c049c5af8614820a4bf074\",\n        \"402e5d9ca1c049c5af8614820a4bf072\",\n        \"402e5d9ca1c049c5af8614820a4bf071\"\n        ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/calendar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"calendar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Event (Outlook)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "session_id",
+						"value": "3861ac82cf3046a1916b64a8d386f0c0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"subject\": \"Let's go for lunch\",\n  \"body\": {\n    \"contentType\": \"HTML\",\n    \"content\": \"Does late morning work for you?\"\n  },\n  \"start\": {\n      \"dateTime\": \"2017-04-15T12:00:00\",\n      \"timeZone\": \"Pacific Standard Time\"\n  },\n  \"end\": {\n      \"dateTime\": \"2017-04-15T14:00:00\",\n      \"timeZone\": \"Pacific Standard Time\"\n  },\n  \"location\":{\n      \"displayName\":\"Harry's Bar\"\n  },\n  \"attendees\": [\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/calendar/898998",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"calendar",
+						"898998"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all User with search",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "session_id",
+						"value": "3861ac82cf3046a1916b64a8d386f0c0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_name\": \"visak\",\n    \"password\": \"vishaknk\",\n    \"email_id\": \"visak@cloudium.io\",\n    \"first_name\": \"Visak\",\n    \"last_name\": \"N Kumar\",\n    \"role\": 0,\n    \"company_id\": \"5da6132d8d0538f6e65f5553\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/userlist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"userlist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "session_id",
+						"value": "3861ac82cf3046a1916b64a8d386f0c0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_name\": \"visak\",\n    \"password\": \"vishaknk\",\n    \"email_id\": \"visak@cloudium.io\",\n    \"first_name\": \"Visak\",\n    \"last_name\": \"N Kumar\",\n    \"role\": 0,\n    \"company_id\": \"5da6132d8d0538f6e65f5553\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/user/5dc308e316ace962bd087205",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"user",
+						"5dc308e316ace962bd087205"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Company",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "session_id",
+						"value": "3861ac82cf3046a1916b64a8d386f0c0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"company_name\": \"TestCompany\",\n    \"first_name\": \"test\",\n    \"last_name\": \"tester\",\n    \"contact_name\": \"Tester\",\n    \"address_1\": \"AddressOne\",\n    \"address_2\": \"AddressTwo\",\n    \"city\": \"City\",\n    \"zip\": \"13431\",\n    \"state\": \"Kerala\",\n    \"phone\": \"111111111111\",\n    \"email\": \"email@email.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/company",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all company with search",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "session_id",
+						"value": "3861ac82cf3046a1916b64a8d386f0c0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"company_name\": \"TestCompany\",\n    \"first_name\": \"test\",\n    \"last_name\": \"tester\",\n    \"contact_name\": \"Tester\",\n    \"address_1\": \"AddressOne\",\n    \"address_2\": \"AddressTwo\",\n    \"city\": \"City\",\n    \"zip\": \"13431\",\n    \"state\": \"Kerala\",\n    \"phone\": \"111111111111\",\n    \"email\": \"email@email.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/companylist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"companylist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Company's",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "session_id",
+						"value": "3861ac82cf3046a1916b64a8d386f0c0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":[\n\t\t\"5dcef76941bd5e09e9d98f22\"\n\t\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/deletecompany",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"deletecompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get company",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "session_id",
+						"value": "3861ac82cf3046a1916b64a8d386f0c0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":[\n\t\t\"5dcef76941bd5e09e9d98f22\"\n\t\t]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/company/5dcef76941bd5e09e9d98f22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"company",
+						"5dcef76941bd5e09e9d98f22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Auth Url",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "session_id",
+						"value": "3861ac82cf3046a1916b64a8d386f0c0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"visak@cloudium.io\",\n    \"company_id\": \"123123123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/calendar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"calendar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Calendar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "session_id",
+						"value": "3861ac82cf3046a1916b64a8d386f0c0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"TestCalendar\",\n\t\"ids\":[\"402e5d9ca1c049c5af8614820a4bf074\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/createcalendar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"createcalendar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Event (Google)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "session_id",
+						"value": "3861ac82cf3046a1916b64a8d386f0c0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ids\": [\n        \"402e5d9ca1c049c5af8614820a4bf074\"\n    ],\n    \"calendarId\": \"vishaknk@gmail.com\",\n    \"end\": {\n        \"dateTime\": \"2019-12-01T09:11:13.562Z\",\n        \"timeZonae\": \"\"\n    },\n    \"start\": {\n        \"dateTime\": \"2019-12-01T02:11:13.562Z\",\n        \"timeZone\": \"\"\n    },\n    \"summary\": \"Title testing\",\n    \"attendees\": [\n        {\n            \"email\": \"tester@test.com\"\n        }\n    ],\n    \"description\": \"Description Testing\",\n    \"location\": \"Kochi\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32768/1/createevent",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32768",
+					"path": [
+						"1",
+						"createevent"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": []
+}

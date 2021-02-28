@@ -1,0 +1,5 @@
+<div [ngSwitch]="selectedValue">
+    <app-product-tab *ngSwitchCase="'Product'" (messageEvent)="tabClickEvent($event)"></app-product-tab>
+    <app-pricing-tab *ngSwitchCase="'Pricing'" (messageEvent)="tabClickEvent($event)"></app-pricing-tab>
+</div>
+

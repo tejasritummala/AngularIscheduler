@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'is_icon_font';
+  src: url('../font/is_icon_font.eot?95982765');
+  src: url('../font/is_icon_font.eot?95982765#iefix') format('embedded-opentype'),
+    url('../font/is_icon_font.woff2?95982765') format('woff2'),
+    url('../font/is_icon_font.woff?95982765') format('woff'),
+    url('../font/is_icon_font.ttf?95982765') format('truetype');
+  /* url('../font/is_icon_font.svg?95982765#is_icon_font') format('svg'); */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'is_icon_font';
+    src: url('../font/is_icon_font.svg?95982765#is_icon_font') format('svg');
+  }
+}
+*/
+
+[class^="i"]:before,
+[class*=" i"]:before {
+  font-family: "is_icon_font";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.is_add:before {
+  content: '\e800';
+}
+
+/* '' */
+.is_both_parties:before {
+  content: '\e801';
+}
+
+/* '' */
+.is_calender:before {
+  content: '\e802';
+}
+
+/* '' */
+.is_close_button:before {
+  content: '\e803';
+}
+
+/* '' */
+.is_create_team:before {
+  content: '\e804';
+}
+
+/* '' */
+.is_dashboard:before {
+  content: '\e805';
+}
+
+/* '' */
+.is_down_arrow:before {
+  content: '\e806';
+}
+
+/* '' */
+.is_flip:before {
+  content: '\e807';
+}
+
+/* '' */
+.is_group_scheduling:before {
+  content: '\e808';
+}
+
+/* '' */
+.is_integration:before {
+  content: '\e809';
+}
+
+/* '' */
+.is_integrations:before {
+  content: '\e80a';
+}
+
+/* '' */
+.is_left_arrow:before {
+  content: '\e80b';
+}
+
+/* '' */
+.is_notification:before {
+  content: '\e80c';
+}
+
+/* '' */
+.is_per_dashboard:before {
+  content: '\e80d';
+}
+
+/* '' */
+.is_right_arrow:before {
+  content: '\e80e';
+}
+
+/* '' */
+.is_schedule_gmail:before {
+  content: '\e80f';
+}
+
+/* '' */
+.is_set_availability:before {
+  content: '\e810';
+}
+
+/* '' */
+.is_sync_account:before {
+  content: '\e811';
+}
+
+/* '' */
+.is_team_member:before {
+  content: '\e812';
+}
+
+/* '' */
+.is_tick:before {
+  content: '\e813';
+}
+
+/* '' */
+.is_time_detection:before {
+  content: '\e814';
+}
+
+/* '' */
+.is_users:before {
+  content: '\e815';
+}
+
+/* '' */
+.is_settings:before {
+  content: '\e816';
+}
+
+/* '' */

@@ -1,0 +1,142 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.mat_footer_btns {
+  margin: 0px 6px;
+}
+.user-card {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 30px;
+  font-size: 14px;
+  color: #697685;
+  font-family: SFLight;
+  background-color: #fbfcfc;
+  border-bottom: 0.2px solid #f0f0f0;
+}
+.add-user {
+  font-size: 18px;
+  color: #697685;
+  font-family: SFLight;
+  padding-bottom: 10px;
+}
+.user-button {
+  font-size: 13px;
+  font-family: SFLight;
+  font-weight: Medium;
+  background-color: #0298f6;
+  color: #ffffff;
+  width:140px;
+  border-radius: 3px;
+  height: 35px;
+}
+::ng-deep.mat-toolbar {
+  background: white;
+}
+.cancel-user {
+  font-size: 13px;
+  font-family: SFLight;
+  color: #0298f6;
+}
+::ng-deep.mat-elevation-z8 {
+  box-shadow: none;
+}
+::ng-deep.mat-tab-header {
+  border: none;
+}
+.user-array {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.users-team:active {
+  font-family: SFMedium;
+  font-size: 13px;
+  font-weight: Medium;
+  color: #0298f6;
+}
+.users-team {
+  font-family: SFMedium;
+  font-size: 13px;
+  font-weight: Light;
+  color: #697685;
+}
+::ng-deep.mat-card:not([class*=mat-elevation-z]){
+  box-shadow:none;
+}
+.user-input {
+  font-size: 13px;
+  color: #697685;
+  font-family: SFslight;
+  border-bottom: 1px #d3dce3;
+}
+/* ::ng-deep .mat-form-field-infix {
+  width: 300px !important;
+  margin-right: 20px !important;
+  overflow-x: hidden !important;
+} */
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+  font-family: SFMedium;
+  font-size: 13px;
+  font-weight: Medium;
+  color: #0298f6;
+}
+::ng-deep .mat-tab-label {
+  font-family: SFMedium;
+  font-size: 13px;
+  font-weight: Light;
+  color: #697685;
+}
+::ng-deep .col-3{
+  max-width:23%;
+}
+::ng-deep.mat-tab-label,
+::ng-deep.mat-tab-label-active {
+  min-width: 0 !important;
+  padding: 10px !important;
+  margin-right: 6px !important;
+  margin-left: 6px;
+}
+.delet-button {
+  width: 16px;
+  height: 16px;
+  padding-right: 5px;
+}
+.delete-button {
+  font-size: 13px;
+  font-family: SFLight;
+  color: #0298f6;
+  outline: none;
+}
+/* ink bar */
+::ng-deep .mat-ink-bar {
+  background-color: #1f89ce !important;
+}
+.add-button {
+  font-size: 13px;
+  font-family: SFLight;
+  color: #0298f6;
+
+  outline: none;
+}
+.add_image {
+  width: 16px;
+  height: 16px;
+  padding-right: 5px;
+}
+.user-tab {
+  overflow-x: hidden;
+}
+.error-class{
+  font-size:11px;
+  color:red;
+  font-family:SFLight;
+}
+.formField{
+  width:20%;
+margin-right:1%;
+}
+:host ::ng-deep .mat-card {
+  border-radius: 0px;
+}
+
+
